@@ -1,6 +1,9 @@
 package in.strikes.crudSpringBootDemo.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import org.hibernate.sql.ast.spi.StringBuilderSqlAppender;
 
 import java.time.LocalDate;
@@ -8,8 +11,10 @@ import java.time.LocalTime;
 
 @Entity
 public class Student{
-
+ @Id
+ @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
 
     public Long getId(Long id){
         return id;
