@@ -1,0 +1,36 @@
+(exclude = {DataSourceAutoConfiguration.class}) pahle toh yeh dalna @sb mein jisse hello world chlega.....
+http://localhost:8080
+
+   //"CONTROLLER SERVICE REPOSITORY ARCHITECTURE"
+kaise alag alag step hoga:-
+postman se request  recive krega student controller class yeh handle http request
+next student service class sare buisness logic action perform
+databse mein value store krne ke liye student repository class db interaction
+
+postman request bhejega json format mein java language mein convert krega usse
+sabka baap class hoga STUDENT.JAVA ESKO ENTITY KHENGE
+
+    //ya toh har step ke liye alag alag object banayege CHECK NOTES.....
+    //1. ek end point ko krna Api(/app/student)
+    //2. Buisiness logic
+    //3/Interact with Datbase to store
+    //4. response back to client
+
+
+
+NOW LET'S START
+ABB SABKE LE LIYE ALAG PAKAGE BANAYENGE
+
+
+NEXT LECTURE
+
+REPOSITORY INTERACT WITH DB
+TOH HUM QUERY NHI LIKHENGE ABB METHODS LIKHENGE
+1.create --> save()
+2.read all --> findAll()
+3.Read one --> find()
+4. Delete --> deletebyId()
+5. update --> save()
+6. boolan --> existsbyId()
+
+BAS EXTEND KRWA LIYA REPOSITORY KO JPA AND EK JAGAH SAVE LIKH DIYA ABB KUCH KARNE KI JRURAAT NHI
