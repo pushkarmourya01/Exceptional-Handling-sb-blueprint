@@ -3,6 +3,8 @@ package in.strikes.crudSpringBootDemo.controller;
 
 import in.strikes.crudSpringBootDemo.DTO.StudentRequestDTO;
 import in.strikes.crudSpringBootDemo.DTO.StudentResponseDTO;
+import in.strikes.crudSpringBootDemo.DTO.StudentUpdateRequestDTO;
+import in.strikes.crudSpringBootDemo.DTO.StudentUpdateResponseDTO;
 import in.strikes.crudSpringBootDemo.entity.Student;
 import in.strikes.crudSpringBootDemo.service.StudentService;
 import jakarta.validation.Valid;
@@ -48,10 +50,28 @@ public class StudentController {
              .body(getstud);
  }
  @GetMapping // not require any parameter such as id or anything just student List give all the list of the students
-    public List<StudentRequestDTO> getAll(){
+    public ResponseEntity<List<StudentRequestDTO>> getAll(){
         List<StudentRequestDTO> studList = studentService.getAll();
 
+//We're Taking list so return also must have such type
+  return ResponseEntity
+          .status(HttpStatus.OK)
+          .body(studList);
 
+ }
+@PutMapping("/{id}")
+    public ResponseEntity<StudentUpdateResponseDTO>
+updateStud(@PathVariable Long id, @RequestBody StudentRequestDTO studentRequestDTO){
+        StudentUpdateResponseDTO updateStud = studentService.updateStud(id, studentRequestDTO);
+
+        return ResponseEntity.ok(updateStud);
+}
+
+ @DeleteMapping("/{id}")
+    public ResponseEntity<StudentResponseDTO> deleStud(@PathVariable Long id){
+        StudentResponseDTO deleStud = studentService.deleStud(id);
+
+        return ResponseEntity.ok(deleStud);
  }
 
 }
